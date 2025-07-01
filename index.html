@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brownfield Value Unlocker - Powered by Natura Solve</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/mapbox-gl@2.14.1/dist/mapbox-gl.js"></script>
+  <link href="https://unpkg.com/mapbox-gl@2.14.1/dist/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-icons@4.9.0/fa/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .map-container {
+      height: 100%;
+      width: 100%;
+    }
+    
+    /* Custom slider styling */
+    .custom-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      background: #374151;
+      outline: none;
+    }
+    
+    .custom-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #14b8a6;
+      cursor: pointer;
+      transition: background 0.15s ease-in-out;
+    }
+    
+    .custom-slider::-webkit-slider-thumb:hover {
+      background: #0d9488;
+    }
+    
+    .custom-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border: 0;
+      border-radius: 50%;
+      background: #14b8a6;
+      cursor: pointer;
+      transition: background 0.15s ease-in-out;
+    }
+    
+    .custom-slider::-moz-range-thumb:hover {
+      background: #0d9488;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .map-container {
+        height: 350px;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .desktop-menu {
+        display: none;
+      }
+      
+      .mobile-full {
+        grid-column: span 3;
+      }
+      
+      /* Add new styling for the sidebar toggle */
+      .sidebar-toggle {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 50;
+      }
+    }
+    
+    /* Logo styling */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-image {
+      height: 40px;
+      margin-right: 12px;
+    }
+    
+    /* Icon styling */
+    .feature-icon {
+      height: 24px;
+      width: 24px;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-200 min-h-screen">
+  <div id="root"></div>
+  
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js",
+      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js",
+      "react-icons/fa": "https://cdn.jsdelivr.net/npm/react-icons@4.9.0/fa/index.js"
+    }
+  }
+  </script>
+  
+  <script type="text/babel" src="app.js"></script>
+</body>
+</html>
